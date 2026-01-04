@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/lib/supabase/client";
+import { createSupabaseClient } from "@/lib/supabase/client";
 
 // SignInFormコンポーネント
 export default function SignInForm() {
@@ -9,7 +9,7 @@ export default function SignInForm() {
   const [password, setPassword] = useState("");
 
   const handleSignIn = async () => {
-    const { error } = await supabase.auth.signInWithPassword({
+    const { error } = await createSupabaseClient().auth.signInWithPassword({
       email,
       password,
     });

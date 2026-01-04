@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/lib/supabase/client";
+import { createSupabaseClient } from "@/lib/supabase/client";
 
 // ユーザー新規登録フォームコンポーネント
 export default function SignUpForm() {
@@ -24,7 +24,7 @@ export default function SignUpForm() {
     setLoading(true);
 
     // Supabaseを使用してサインアップ処理を実行
-    const { error } = await supabase.auth.signUp({
+    const { error } = await createSupabaseClient().auth.signUp({
       email,
       password,
     });
