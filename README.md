@@ -20,11 +20,13 @@ spabase #DB
 ```folder
 app/
 app/api/    #API
+app/households/page.tsx #ユーザーが所属する家計簿の一覧を出す予定【作成中】
 app/layout.tsx  #共通レイアウト
 app/page.tsx    #トップページ（アプリロゴと説明とサインイン/新規登録）
 app/signinForm.tsx  #サインインフォーム、supabaseにサインイン
 app/signupForm.tsx  #新規登録フォーム、supabaseにユーザー登録
 lib/supabase/client.ts  #spabaseのクライアント（クライアントとはサーバーではなくブラウザで実行されること）
+lib/supabase/server.ts  #spabaseのサーバー側接続セット
 public  #画像とか
 .env.local  #supabaseのURLとanonキー
 README.md   #仕様と進捗をちゃんと書きます

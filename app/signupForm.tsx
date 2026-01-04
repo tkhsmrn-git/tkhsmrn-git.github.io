@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { createSupabaseClient } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/client";
 
 // ユーザー新規登録フォームコンポーネント
 export default function SignUpForm() {
@@ -11,6 +11,7 @@ export default function SignUpForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   // サインアップ処理
   const handleSignUp = async () => {
@@ -24,7 +25,7 @@ export default function SignUpForm() {
     setLoading(true);
 
     // Supabaseを使用してサインアップ処理を実行
-    const { error } = await createSupabaseClient().auth.signUp({
+    const { error } = await createClient().auth.signUp({
       email,
       password,
     });
@@ -34,8 +35,8 @@ export default function SignUpForm() {
       setError(error.message);
     } else {
       setError(null);
-      // サインアップ成功時の処理（例: メール確認の案内表示）
-      alert("登録が完了しました。確認メールをチェックしてください。");
+      // サインアップ成功フラグを設定
+      setSuccess(true);
     }
 
     // ローディング状態を解除
@@ -106,6 +107,7 @@ export default function SignUpForm() {
       </button>
       {error && <p className="mt-4 text-red-600">{error}</p>}
       {loading && <p className="mt-4 text-gray-600">処理中...</p>}
+      {success && <p className="mt-4 text-green-600">登録が完了しました。確認メールをチェックしてください。</p>}
     </form>
   );
 }
