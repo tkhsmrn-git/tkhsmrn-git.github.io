@@ -1,8 +1,33 @@
+"use client";
+
+import { useState } from "react";
+import { supabase } from "@/lib/supabase/client";
 
 // SignInFormコンポーネント
 export default function SignInForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignIn = async () => {
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    if (error) {
+      alert(error.message);
+    }else {
+      alert("サインインに成功しました");
+    }
+  };
+  
+
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSignIn();
+      }}
+    >
       <div className="mb-4">
         <label
           htmlFor="email"
@@ -13,6 +38,8 @@ export default function SignInForm() {
         <input
           type="email"
           id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:text-white"
           required
         />
@@ -27,6 +54,8 @@ export default function SignInForm() {
         <input
           type="password"
           id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:text-white"
           required
         />
