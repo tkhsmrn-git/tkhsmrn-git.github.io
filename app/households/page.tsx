@@ -7,7 +7,7 @@ export default async function Households() {
   const {data} = await supabase.auth.getUser()
 
   return <div>householdsです
-    ログイン中アカウント：
+    ログイン中アカウントID：
     {data?.user?.id}
   </div>;
 }
