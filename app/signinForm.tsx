@@ -31,7 +31,7 @@ export default function SignInForm() {
       // サインイン成功
       setError(null);
       setSuccess(true);
-      //redirect("/households")
+      redirect("/households")
     }
 
     // ローディング状態を解除

@@ -1,5 +1,5 @@
 これは学習用の家計簿アプリです。
-Githubで[公開](https://tkhsmrn-git.github.io/)しています。
+Vercelで[公開](https://tkhsmrn-git-github-io.vercel.app/)しています。
 
 ## 概要
 学習用の家計簿アプリです。まだ表紙もできていません。
@@ -7,12 +7,13 @@ Githubで[公開](https://tkhsmrn-git.github.io/)しています。
 ## 技術スタック
 ```
 vscode  #コードエディタ
-github  #バージョン管理と公開
+github  #バージョン管理
 Next.js #まだよくわかりません
 typescript  #言語
 redix-ui    #UIの骨組み
 tailwind CSS    #UIの装飾
 spabase #DB
+Vercel  #公開
 ```
 
 ## フォルダ構成
