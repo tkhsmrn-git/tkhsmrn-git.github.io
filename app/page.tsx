@@ -12,9 +12,9 @@ export default function Home() {
 const [activeTab, setActiveTab] = useState("tab1");
 
   return (
-    <div className="flex items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex w-full max-w-3xl flex-col items-center justify-items-start py-4 px-4 bg-white dark:bg-black sm:items-start">
-        
+    <div className="flex items-center justify-center bg-zinc-50 font-sans">
+      <main className="flex w-full max-w-3xl flex-col items-center justify-items-start py-4 px-4 bg-white sm:items-start">
+
         {/* アプリ名と説明*/}
         <div className="flex flex-col items-start text-center sm:items-start sm:text-left">
           <div className="flex flex-row items-center gap-4">
@@ -25,18 +25,18 @@ const [activeTab, setActiveTab] = useState("tab1");
               height={100}
               priority
             />
-            <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white sm:text-5xl">
+            <h1>
               Kakeibo
             </h1>
           </div>
-          <a className="mb-8 text-md text-start px-4 text-gray-600 dark:text-gray-400">
+          <a className="mb-8 text-md text-start px-4 text-gray-600">
             2人以上と共有できるシンプルな家計簿です。<br></br>
             ご夫婦の家計管理やイベントの収支管理でご利用ください。
           </a>
         </div>
 
         {/*新規登録またはサインイン*/}
-        <Root defaultValue={activeTab} className="w-full  bg-white p-4 shadow-md rounded-md dark:bg-gray-900">
+        <Root defaultValue={activeTab} className="w-full bg-white/95 backdrop-blur-sm p-6 shadow-xl rounded-2xl border border-gray-100">
           <List
             className="mb-8 flex w-full justify-center space-x-2 bg-gray-200 p-1 rounded-lg"
             aria-label="Manage account tabs"

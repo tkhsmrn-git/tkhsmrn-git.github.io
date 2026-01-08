@@ -54,7 +54,7 @@ export default function SignUpForm() {
       <div className="mb-4">
         <label
           htmlFor="email"
-          className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
+          className="mb-2 block text-sm font-medium text-gray-700"
         >
           メールアドレス
         </label>
@@ -63,14 +63,13 @@ export default function SignUpForm() {
           id="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:text-white"
           required
         />
       </div>
       <div className="mb-4">
         <label
           htmlFor="password"
-          className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
+          className="mb-2 block text-sm font-medium text-gray-700"
         >
           パスワード
         </label>
@@ -79,14 +78,13 @@ export default function SignUpForm() {
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:text-white"
           required
         />
       </div>
       <div className="mb-6">
         <label
           htmlFor="confirmPassword"
-          className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
+          className="mb-2 block text-sm font-medium text-gray-700"
         >
           パスワード確認
         </label>
@@ -95,7 +93,6 @@ export default function SignUpForm() {
           id="confirmPassword"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          className="w-full rounded border border-gray-300 px-3 py-2 focus:border-blue-500 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:text-white"
           required
         />
       </div>
