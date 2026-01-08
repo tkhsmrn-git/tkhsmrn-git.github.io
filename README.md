@@ -21,7 +21,10 @@ Vercel  #公開
 ```folder
 app/
 app/api/    #API
+app/api/households/route.ts    #家計簿の追加、一覧取得
 app/households/page.tsx #ユーザーが所属する家計簿の一覧を出す予定【作成中】
+app/households/householdCreateForm.tsx #家計簿の追加フォーム
+app/households/householdsListForm.tsx #家計簿の一覧フォーム
 app/layout.tsx  #共通レイアウト
 app/page.tsx    #トップページ（アプリロゴと説明とサインイン/新規登録）
 app/signinForm.tsx  #サインインフォーム、supabaseにサインイン
