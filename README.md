@@ -20,6 +20,7 @@ Vercel  #公開
 
 ```folder
 app/api
+app/api/active_household/route.ts    #選択中の家計簿の切り替えと取得
 app/api/households/route.ts    #家計簿の追加、一覧取得
 app/api/users_setting/route.ts  #ユーザープロファイルの更新
 

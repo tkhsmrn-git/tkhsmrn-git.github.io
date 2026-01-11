@@ -8,13 +8,12 @@ import { useState } from "react";
 
 // Homeページコンポーネント
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("tab1"); // タブの状態管理
 
-const [activeTab, setActiveTab] = useState("tab1");
-
+  //レンダリング部分
   return (
     <div className="flex items-center justify-center bg-zinc-50 font-sans">
       <main className="flex w-full max-w-3xl flex-col items-center justify-items-start py-4 px-4 bg-white sm:items-start">
-
         {/* アプリ名と説明*/}
         <div className="flex flex-col items-start text-center sm:items-start sm:text-left">
           <div className="flex flex-row items-center gap-4">
@@ -25,9 +24,7 @@ const [activeTab, setActiveTab] = useState("tab1");
               height={100}
               priority
             />
-            <h1>
-              Kakeibo
-            </h1>
+            <h1>Kakeibo</h1>
           </div>
           <a className="mb-8 text-md text-start px-4 text-gray-600">
             2人以上と共有できるシンプルな家計簿です。<br></br>
@@ -36,7 +33,10 @@ const [activeTab, setActiveTab] = useState("tab1");
         </div>
 
         {/*新規登録またはサインイン*/}
-        <Root defaultValue={activeTab} className="w-full bg-white/95 backdrop-blur-sm p-6 shadow-xl rounded-2xl border border-gray-100">
+        <Root
+          defaultValue={activeTab}
+          className="w-full bg-white/95 backdrop-blur-sm p-6 shadow-xl rounded-2xl border border-gray-100"
+        >
           <List
             className="mb-8 flex w-full justify-center space-x-2 bg-gray-200 p-1 rounded-lg"
             aria-label="Manage account tabs"
@@ -65,9 +65,6 @@ const [activeTab, setActiveTab] = useState("tab1");
             <SignUpForm />
           </Content>
         </Root>
-
-
-
       </main>
     </div>
   );
