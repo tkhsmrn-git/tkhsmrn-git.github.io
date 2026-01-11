@@ -24,6 +24,10 @@ app/api/active_household/route.ts    #選択中の家計簿の切り替えと取
 app/api/households/route.ts    #家計簿の追加、一覧取得
 app/api/users_setting/route.ts  #ユーザープロファイルの更新
 
+app/signin/page.tsx    #アプリロゴと説明とサインイン/新規登録
+app/signin/signinForm.tsx  #サインインフォーム、supabaseにサインイン
+app/signin/signupForm.tsx  #新規登録フォーム、supabaseにユーザー登録
+
 app/households
 app/households/householdCreateForm.tsx #家計簿の追加フォーム
 app/households/householdsListForm.tsx #家計簿の一覧フォーム
@@ -33,12 +37,10 @@ app/settings
 app/settings/page.tsx   #設定ページ
 app/settings/UserProfileSettingForm.tsx #ユーザー名の更新
 
+app/page.tsx    #トップページ（サインインしているときはhouseholdへ、サインインしていないときはsigninにリダイレクト）
 app/globals.css #共通CSS
 app/Header.tsx  #ヘッダー
 app/layout.tsx  #共通レイアウト
-app/page.tsx    #トップページ（アプリロゴと説明とサインイン/新規登録）
-app/signinForm.tsx  #サインインフォーム、supabaseにサインイン
-app/signupForm.tsx  #新規登録フォーム、supabaseにユーザー登録
 
 lib/supabase/client.ts  #spabaseのクライアント（クライアントとはサーバーではなくブラウザで実行されること）
 lib/supabase/server.ts  #spabaseのサーバー側接続セット

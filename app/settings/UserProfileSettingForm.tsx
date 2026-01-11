@@ -71,7 +71,6 @@ export default function UserProfileSettingForm() {
           e.preventDefault();
           handleProfileUpdate(userName);
         }}
-        className="flex flex-col gap-4 my-4"
       >
         <label className="text-xl font-semibold w-2xl">ユーザーの表示名:</label>
         <div className="flex flex-row gap-4 items-center">
